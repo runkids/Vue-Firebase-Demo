@@ -1,5 +1,5 @@
 # Vue + Element UI + Firebase Demo
-<img src="https://github.com/runkids/Vue-Firebase-Demo/blob/master/src/blob/login.png?raw=true" style="max-width:50%;"/><br>
+<img src="https://github.com/runkids/Vue-Firebase-Demo/blob/master/src/blob/login.png?raw=true" width='300px' height='400px'/><br>
 ## Introduction
 This is my practice project with Vue , if there is help to you, I will be very happy
 
