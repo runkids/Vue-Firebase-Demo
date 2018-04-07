@@ -2,19 +2,23 @@
   <div class="userInfo_contain">
 	  <el-row class="elrow1" style="">
 		<el-col :span="24" style="display: inline-block;">
-			<label for="file-upload" class="custom-file-upload">
-				<img class="showUserImg" :src="userInfoForm.photoURL"/>
-			</label>
-			<input id="file-upload" @change="fileSelected" type="file"/>
-			<div class="status" style="display: inline-block;">
-				<div>驗證狀態：<span style="color:red;">{{userInfo.emailVerified?"已驗證":"未驗證"}}</span></div>
-				<div>
-					帳號建立時間：{{creationTime}}
+			<el-col :span="12" style="display: inline-block;">
+				<label for="file-upload" class="custom-file-upload">
+					<img class="showUserImg" :src="userInfoForm.photoURL"/>
+				</label>
+				<input id="file-upload" @change="fileSelected" type="file"/>
+			</el-col>
+			<el-col :span="12" style="display: inline-block;">
+				<div class="status" style="display: inline-block;">
+					<div>驗證狀態：<span style="color:red;">{{userInfo.emailVerified?"已驗證":"未驗證"}}</span></div>
+					<div>
+						帳號建立時間：{{creationTime}}
+					</div>
+					<div class=''>
+						最後登入時間：{{lastSignInTime}}
+					</div>
 				</div>
-				<div class=''>
-					最後登入時間：{{lastSignInTime}}
-				</div>
-			</div>
+			</el-col>
 		</el-col>
 	  </el-row>
 	  <el-row>
@@ -130,7 +134,7 @@ export default {
 </script>
 <style>
 input[type="file"] {
-  border:1px solid;
+    border:1px solid;
     position: absolute;
     width: 0%;
     height: 0%;
@@ -147,11 +151,16 @@ input[type="file"] {
 	margin-left: 1%;
 }
 .showUserImg{
+	position: relative;
     border: 1px dashed rgba(204, 204, 204, 0.925);
 	border-radius: 10%;
     vertical-align: middle;
-	max-width: 40%;
-	margin-left: 25%;
+	max-width: 50%;
+	min-height: 50%;
+	min-width: 90%;
+	overflow: hidden;
+	transition-duration: 1.0s;
+	left: 5%;
 }
 .custom-file-upload:hover::before{
 	content: '上傳相片';
@@ -159,11 +168,12 @@ input[type="file"] {
 	color: rgba(204, 204, 204, 0.925);
 	top: 40%;
 	left:40%;
+	
 }
 .showUserImg:hover{
 	border: 1px solid rgba(14, 12, 177, 0.925);
   	opacity: 0;
-  	transition-duration: 2.0s;
+  	transition-duration: 1.0s;
 }
 .userInfoForm{
 	position: absolute;
@@ -173,33 +183,32 @@ input[type="file"] {
 }
 .elrow1{
 	margin-top:2%;
-	min-width:50%;
-	min-height:20%;
-	padding-left:20%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 50%;
 }
 .status{
-	position: absolute;
-	padding-top: 2%;
-	margin-left: -5%;
+	position: relative;
+	margin-top:15%;
 }
 @media (min-width: 300px) and (max-width: 1024px) {
 	.elrow1{
 		font-size: 10px;
+		max-width: 100%;
 	}
 	.userInfoForm{
-		min-width:70%;
 		padding-left:0%;
+		margin-top: 10%;
 	}
 	.showUserImg{
 		margin-left:3%;
-		max-width: 30%;
+		width: 138px;
 	}
 	.status{
 		position: relative;
-		margin: 5% 0 0 0;
-		margin-left:25%;
-		margin-right:1%;
-		margin-top:15%;
+		margin-right:-10%;
+		left: 90%;
+		margin-top:35%;
 	}
 	.custom-file-upload:hover::before{
 		top: 40%;

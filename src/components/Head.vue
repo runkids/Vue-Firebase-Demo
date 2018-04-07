@@ -82,6 +82,7 @@ export default {
     height: 50px;
     width: 50px;
     position: absolute;
+    cursor: pointer;
 }
 .breadcrumb{
     margin-top: 20px;

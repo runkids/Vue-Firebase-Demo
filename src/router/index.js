@@ -27,6 +27,11 @@ const routes = [
 				component: pages.user,
 				meta: ['設定', '個人資訊']
 			},
+			{
+				path: '/charRoom',
+				component: pages.charRoom,
+				meta: ['聊天室']
+			},
 		]
 	}
 ]

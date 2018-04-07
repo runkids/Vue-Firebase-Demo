@@ -134,3 +134,11 @@ export const updateOnlineMember = async (val) => {
         res(val);
      });
 }
+
+export const getCharRoomInfo = ()=>{
+    return db.ref('/CharRoom/');
+}
+
+export const saveNewMsg = async (msgObj) => {
+    return await getCharRoomInfo().push(msgObj);
+}

@@ -10,6 +10,7 @@
                         active-text-color="#ffd04b" 
                         router>
                     <el-menu-item index="runkids.io"><i class="el-icon-menu"></i><span>首頁</span></el-menu-item>
+                    <el-menu-item index="charRoom"><i class="el-icon-service"></i><span>聊天室</span></el-menu-item>
                     <el-submenu index="1">
                         <template slot="title"><i class="el-icon-setting"></i><span>設定</span></template>
                         <el-menu-item index="user">個人資訊</el-menu-item>
